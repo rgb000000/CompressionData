@@ -6,6 +6,7 @@ import numpy as np
 import sys
 from PIL import Image
 from PIL import ImageFilter
+from tqdm import tqdm
 
 
 ori_data_dir = 'Flickr/train_images/'
@@ -19,7 +20,7 @@ patch_size = [256, 256]
 sample_num_for_each_seq = 20
 sample_idx = 0
 
-for im_name in imgNames:
+for im_name in tqdm(imgNames):
 
     seq_path = ori_data_dir + im_name
 
@@ -55,6 +56,6 @@ for im_name in imgNames:
 
     sample_idx += 1
 
-    if sample_idx % 10 == 0:
-        # break
-        print(sample_idx)
+    # if sample_idx % 10 == 0:
+    #     # break
+    #     print(sample_idx)
